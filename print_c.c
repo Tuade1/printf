@@ -32,24 +32,20 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				e = va_arg(a, char *);
-				if (e == NULL)
-				{
-					return (NULL);
-				}
-				else
+				if (e != NULL)
 				{
 					for (; *e; e++)
 					{
-						_putchar(*e)
+						_putchar(*e);
 						len++;
 					}
 				}
 			}
 			else
 			{
-				j = va_args(a, char);
-				_putchar(j);
-				len++;
+				_putchar('%');
+				_putchar(format[i]);
+				len += 2;
 			}
 		}
 		else
