@@ -8,14 +8,11 @@
  * @format: a character string
  * Return: the number of characters
  */
-
 int _printf(const char *format, ...)
 {
 	va_list a;
-	int i;
-	char g;
-	int len = 0;
-	char *e;
+	int i, k = 0, len = 0;
+	char g, *j, *e;
 
 	va_start(a, format);
 	for (i = 0; format[i] != '\0'; i++)
@@ -41,17 +38,17 @@ int _printf(const char *format, ...)
 					}
 				}
 			}
-			else
-			{
-				_putchar('%');
-				_putchar(format[i]);
-				len += 2;
-			}
 		}
 		else
 		{
-			_putchar(format[i]);
-			len++;
+      j = va_arg(a, char *);
+      if (j != NULL)
+        {
+          while (j[k] < '\0')
+          _putchar(j[k]);
+          k++;
+          len++;
+        }
 		}
 	}
 	va_end(a);
