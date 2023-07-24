@@ -21,16 +21,12 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == '%')
-			{
 				_putchar('%');
 				len++;
-			}
 			else if (format[i] == 'c')
-			{
 				g = va_arg(a, int);
 				_putchar(g);
 				len++;
-			}
 			else if (format[i] == 's')
 			{
 				e = va_arg(a, char *);
