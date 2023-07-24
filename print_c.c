@@ -12,9 +12,8 @@
 int _printf(const char *format, ...)
 {
 	va_list a;
-	int i;
+	int i, len = 0;
   char g;
-	int len = 0;
 	char *e;
 
 	va_start(a, format);
@@ -32,11 +31,7 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				e = va_arg(a, char *);
-        if (e = NULL)
-        {
-          return (NULL);
-        }
-        else
+        if (e != NULL)
         {
           for(; *e; e++)
             {
@@ -47,8 +42,8 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-        j = va_args(a, char)
-        _putchar(j);
+        _putchar('%');
+        _putchar(format[i]);
 				len++;
 			}
 		}
