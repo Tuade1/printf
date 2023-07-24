@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 {
 	va_list a;
 	int i;
+  char g;
 	int len = 0;
 	char *e;
 
@@ -24,58 +25,39 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == 'c')
 			{
-				e = va_arg(a, char *);
-				len += print_a(*e);
+				g = va_arg(a, int);
+        _putchar(g);
+        len++;
 			}
 			else if (format[i] == 's')
 			{
 				e = va_arg(a, char *);
-				len += print_b(e);
+        if (e = NULL)
+        {
+          return (NULL);
+        }
+        else
+        {
+          for(; *e; e++)
+            {
+              _putchar(*e);
+              len++;
+            }
+        }
 			}
 			else
 			{
+        j = va_args(a, char)
+        _putchar(j);
 				len++;
 			}
 		}
 		else
 		{
+      _putchar(format[i]);
 			len++;
 		}
 	}
 	va_end(a);
 	return (len);
-}
-
-/**
- * print_a - function to print a character
- * @a: the character
- * Return: the character
- */
-char print_a(char a)
-{
-	return (a);
-}
-
-/**
- * print_b - function to a string
- * @b: a character string
- * Return: the string
- */
-char *print_b(char *b)
-{
-	int lent = strlen(b);
-	int i;
-	char *c;
-
-	if (b == NULL)
-		return (NULL);
-	c = malloc(lent * sizeof(char));
-	if (c == NULL)
-		return (NULL);
-	for (i = 0; i < lent; i++)
-	{
-		c[i] = b[i];
-	}
-	free(c);
-	return (c);
 }
