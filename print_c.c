@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 {
 	va_list a;
 	int i;
-  char g;
+	char g;
 	int len = 0;
 	char *e;
 
@@ -26,35 +26,35 @@ int _printf(const char *format, ...)
 			if (format[i] == 'c')
 			{
 				g = va_arg(a, int);
-        _putchar(g);
-        len++;
+				_putchar(g);
+				len++;
 			}
 			else if (format[i] == 's')
 			{
 				e = va_arg(a, char *);
-        if (e = NULL)
-        {
-          return (NULL);
-        }
-        else
-        {
-          for(; *e; e++)
-            {
-              _putchar(*e);
-              len++;
-            }
-        }
+				if (e == NULL)
+				{
+					return (NULL);
+				}
+				else
+				{
+					for (; *e; e++)
+					{
+						_putchar(*e)
+						len++;
+					}
+				}
 			}
 			else
 			{
-        j = va_args(a, char)
-        _putchar(j);
+				j = va_args(a, char);
+				_putchar(j);
 				len++;
 			}
 		}
 		else
 		{
-      _putchar(format[i]);
+			_putchar(format[i]);
 			len++;
 		}
 	}
