@@ -1,8 +1,6 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdarg.h>
-#include <string.h>
-#include <stdlib.h>
+#include <stdio.h>
 /**
  * _printf - function to print a character according to a format
  * @format: a character string
