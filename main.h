@@ -3,5 +3,6 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+int print_intdoub(int n);
 
 #endif /*MAIN_H*/
