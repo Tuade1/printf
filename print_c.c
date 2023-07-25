@@ -12,6 +12,11 @@ int _printf(const char *format, ...)
 	int i, len = 0;
 	char g, *e;
 
+  if (!format || (format[0] == '%' && format[1] == '\0'))
+  {
+    return (-1);
+  }
+
 	va_start(a, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
