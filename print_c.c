@@ -24,7 +24,6 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%'), len++;
         format++;
-        _putchar(*format), len++;
 			}
 			else if (*format == 'c')
 			{
@@ -34,10 +33,18 @@ int _printf(const char *format, ...)
 			{
 				e = va_arg(a, char *);
 				if (e == NULL)
+        {
 					e = "(null)";
+        }
 				for (; *e; e++)
+        {
 					_putchar(*e), len++;
+        }
 			}
+      else
+      {
+        _putchar('%'), _putchar(*format), len += 2;
+      }
 		}
 		else
 			_putchar(*format), len++;
