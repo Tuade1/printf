@@ -23,6 +23,8 @@ int _printf(const char *format, ...)
 			if (*format == '%')
 			{
 				_putchar('%'), len++;
+        format++;
+        _putchar(*format), len++;
 			}
 			else if (*format == 'c')
 			{
