@@ -32,8 +32,8 @@ int _printf(const char *format, ...)
 			{
 				e = va_arg(a, char *);
 				if (e == NULL)
-          e = "(null)";
-        for (; *e; e++)
+					e = "(null)";
+				for (; *e; e++)
 					_putchar(*e), len++;
 			}
 		}
